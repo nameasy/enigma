@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="dark light" name="color-scheme">
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <link href="" rel="icon" sizes="16x16" type="image/png">
+    <link href="" rel="icon" sizes="32x32" type="image/png">
+    <link href="" rel="icon" sizes="96x96" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="assets/styles/base.css" rel="stylesheet" type="text/css">
+    <link href="assets/styles/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <h4 class="text-md">Enigma - MCMXC a.D.</h4>
+                </div>
+                <div class="header-info">
+                    <button class="button button--link" id="openModal">Об альбоме</button>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="intro">
+                <div class="intro-container">
+                    <header class="intro-header">
+                        <h4 class="text-md">Enigma - MCMXC a.D.</h4>
+                    </header>
+                    <div class="intro-content">
+                        <h4 class="text-md">Дебютный альбом проекта Энигма открывает томный женский голос, который готовит слушателя к чему-то явно особенному.</h4>
+                        <p class="text-xl">Добрый вечер. Это голос Энигма. В течение следующего часа мы отправимся с вами в другой мир, в мир музыки, духа и умиротворения. Выключите свет, глубоко вздохните и расслабьтесь. Мы начнём двигаться медленно. Очень медленно. И пусть ритм музыки будет вашей путеводной звездой.</p>
+                    </div>
+                    <footer class="intro-footer">
+                        <button class="button button--primary" id="closeIntro">Слушать →</button>
+                    </footer>
+                </div>
+            </section>
+            <section class="visual">
+                <div class="visual-container">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-player">
+                    <button class="button" id="playPause">Играть</button>
+                    <audio controls id="audio"></audio>
+                </div>
+                <div class="footer-mode">
+                    <button class="button" id="fullScreen">На весь экран</button>
+                </div>
+            </div>
+        </footer>
+        <div class="modal">
+            <div class="modal-container">
+                <header class="modal-header">
+                    <h4 class="text-md">Enigma - MCMXC a.D.</h4>
+                    <button class="button" id="closeModal" title="Закрыть" type="button">Закрыть</button>
+                </header>
+                <div class="modal-content">
+                    <figure class="modal-thumb">
+                        <img alt="" class="modal-img" src="assets/images/cover.jpg">
+                    </figure>
+                    <p class="text-xl">MCMXC a.D. - дебютный альбом проекта Энигма, вышедший в 1990 году. Достигнув позиции № 1 в 41 стране, он собрал 57 платиновых наград, включая тройную платину в США, где он оставался в рейтинге альбомов Billboard 200 в течение пяти лет.</p>
+                </div>
+                <div class="modal-footer">
+                    <a class="button button--primary" href="https://ru.wikipedia.org/wiki/MCMXC_a.D.">Читать ещё →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const playPause = document.querySelector("#playPause"),
+                fullScreen = document.querySelector("#fullScreen"),
+                modal = document.querySelector(".modal"),
+                openModal = document.querySelector("#openModal"),
+                closeModal = document.querySelector("#closeModal");
+
+            function o() {
+                audio.paused ? (audio.play(), playPause.innerHTML = "Поставить на паузу") : (audio.pause(), playPause.innerHTML = "Играть")
+            }
+
+            function u() {
+                document.fullscreenElement ? document.exitFullscreen && document.exitFullscreen() : document.documentElement.requestFullscreen()
+            }
+            openModal.addEventListener("click", function() {
+                    modal.classList.add("modal--active")
+                }), closeModal.addEventListener("click", function() {
+                    modal.classList.remove("modal--active")
+                }), document.addEventListener("keypress", function(e) {
+                    27 === e.keyCode && modal.classList.remove("modal--active")
+                }, !1), fullScreen.addEventListener("click", function() {
+                    u()
+                }),
+                playPause.addEventListener("click", function() {
+                    o()
+                }), document.addEventListener("keypress", function(e) {
+                    32 === e.keyCode && o()
+                }, !1), audio.play && (playPause.innerHTML = "Поставить на паузу"), audio.play && (playPause.innerHTML = "Поставить на паузу")
+        });
+    </script>
+</body>
+
+</html>
