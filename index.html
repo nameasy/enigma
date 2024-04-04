@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- Design by Stepan Lyubavtsev (https://lyubavtsev.ru/) -->
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>MCMXC a.D.</title>
+		<meta content="MCMXC a.D." name="title" />
+		<meta content="Проект о дебютном альбоме «Энигмы»" name="description" />
+		<link href="/favicon.ico" rel="icon" />
+		<meta content="website" property="og:type" />
+		<meta content="https://nameasy.github.io/enigma/" property="og:url" />
+		<meta content="MCMXC a.D." property="og:title" />
+		<meta content="Проект о дебютном альбоме «Энигмы»" property="og:description" />
+		<meta content="summary_large_image" property="twitter:card" />
+		<meta content="https://nameasy.github.io/enigma/" property="twitter:url" />
+		<meta content="MCMXC a.D." property="twitter:title" />
+		<meta content="Проект о дебютном альбоме «Энигмы»" property="twitter:description" />
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+		<script crossorigin="" src="assets/index-CxaybJCl.js" type="module"></script>
+		<link crossorigin="" href="assets/index-wEWPC1w-.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="app">
+			<header class="header">
+				<div class="header-container">
+					<div class="header-logo">
+						<div class="text-md" style="font-family: 'Roboto Mono', monospace">MCMXC a.D.</div>
+					</div>
+					<div class="header-info">
+						<button class="button button--link" id="openModal" type="button">Об альбоме</button>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<section class="intro">
+					<div class="intro-container">
+						<div class="intro-content">
+							<p class="text-md" style="font-family: 'Roboto Mono', monospace">Дебютный альбом проекта «Энигма» открывает томный женский голос, который готовит слушателя к чему-то явно особенному.</p>
+							<p class="text-xl">Добрый вечер. Это голос Энигмы. В течение следующего часа мы отправимся с вами в другой мир, в мир музыки, духа и умиротворения. Выключите свет, глубоко вздохните и расслабьтесь. Мы начнём двигаться медленно. Очень медленно. И пусть ритм музыки будет вашей путеводной звездой.</p>
+						</div>
+						<footer class="intro-footer">
+							<button class="button button--primary" id="closeIntro" type="button">Слушать →</button>
+						</footer>
+					</div>
+				</section>
+				<section class="visual">
+					<div class="visual-container">
+						<canvas id="canvas"></canvas>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer-container">
+					<div class="footer-player">
+						<button class="button" id="playPause" type="button">Играть</button>
+						<audio controls id="audio" src="audio.mp3"></audio>
+					</div>
+					<div class="footer-mode">
+						<button class="button" id="fullScreen" type="button">На весь экран</button>
+					</div>
+				</div>
+			</footer>
+			<div class="modal">
+				<div class="modal-container">
+					<header class="modal-header">
+						<div class="text-md" style="font-family: 'Roboto Mono', monospace">MCMXC a.D.</div>
+						<button class="button" id="closeModal" type="button">Закрыть</button>
+					</header>
+					<div class="modal-content">
+						<figure class="modal-thumb">
+							<img alt="Обложка" class="modal-img" src="cover.jpg" />
+						</figure>
+						<p class="text-xl">MCMXC a.D. — дебютный альбом проекта «Энигма», вышедший в 1990 году. Достигнув позиции № 1 в 41 стране, он собрал 57 платиновых наград, включая тройную платину в США, где он оставался в рейтинге альбомов Billboard 200 в течение пяти лет.</p>
+					</div>
+					<div class="modal-footer">
+						<a class="button button--primary" href="https://ru.wikipedia.org/wiki/MCMXC_a.D.">Читать ещё →</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
